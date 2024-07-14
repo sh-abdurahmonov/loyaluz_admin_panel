@@ -1,4 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import {
   Blogs,
   Categories,
@@ -15,10 +17,6 @@ const App = () => {
       path: "/",
       element: <Dashboard />,
       children: [
-        {
-          path: "/login",
-          element: <Login />,
-        },
         {
           path: "/categories",
           element: <Categories />,
@@ -45,8 +43,17 @@ const App = () => {
         },
       ],
     },
+    {
+      path: "/login",
+      element: <Login />,
+    },
   ]);
-  return <RouterProvider router={routes} />;
+  return (
+    <>
+      <RouterProvider router={routes} />
+      <ToastContainer />
+    </>
+  );
 };
 
 export default App;
