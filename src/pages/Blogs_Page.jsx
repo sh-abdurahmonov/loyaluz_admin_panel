@@ -1,6 +1,6 @@
-import React from "react";
+import Blogs from "../components/blogs/Blogs";
 
 const Blogs_Page = () => {
-  return <div>Blogs_Page</div>;
+  return <Blogs />;
 };
 export default Blogs_Page;
