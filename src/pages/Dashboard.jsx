@@ -19,7 +19,7 @@ const Dashboard = () => {
   };
   return (
     <section className="flex h-screen w-screen bg-slate-100">
-      {collapsed && (
+      {!collapsed && (
         <aside className="bg-white shadow-sm   inset-0 z-50 my-4 ml-4 h-[calc(100vh-32px)] w-72 rounded-xl transition-transform duration-300 xl:translate-x-0 border border-blue-gray-100 flex flex-col justify-center items-center">
           <div className="fixed top-0 pt-2 w-full text-center px-4">
             <NavLink to="/">
