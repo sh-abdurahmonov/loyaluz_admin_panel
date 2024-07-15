@@ -1,7 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useRef, useState } from "react";
-// import axiosClient from "../axios-client";
-import axios from "axios";
+import axiosClient from "../axios-client";
 import { toast } from "react-toastify";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 const Login = () => {
@@ -18,8 +17,8 @@ const Login = () => {
     };
     console.log(payload);
     // POST
-    axios
-      .post("https://api.dezinfeksiyatashkent.uz/api/auth/signin", payload)
+    axiosClient
+      .post("auth/signin", payload)
       .then((res) => {
         if (res.data.success === true) {
           console.log(res.data);

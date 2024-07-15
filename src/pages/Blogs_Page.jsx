@@ -1,5 +1,4 @@
 import Blogs from "../components/blogs/Blogs";
-
 const Blogs_Page = () => {
   return <Blogs />;
 };
