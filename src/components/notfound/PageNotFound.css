@@ -1,0 +1,27 @@
+.not-found {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 180px;
+  padding-bottom: 190px;
+}
+.error-text {
+  margin-bottom: 30px;
+  font-size: 100px;
+  color: rgb(86, 69, 69);
+}
+.error-content {
+  font-size: x-large;
+  font-weight: 600;
+  color: rgb(86, 69, 69);
+}
+.link {
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--clr-gold);
+  text-decoration: underline;
+  font-weight: 700;
+  color: rgb(113, 99, 18);
+}

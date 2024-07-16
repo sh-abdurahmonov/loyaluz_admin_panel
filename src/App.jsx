@@ -11,6 +11,7 @@ import {
   Services,
   Sources,
 } from "./pages";
+import PageNotFound from "./components/notfound/PageNotFound";
 const App = () => {
   const routes = createBrowserRouter([
     {
@@ -46,6 +47,10 @@ const App = () => {
     {
       path: "/login",
       element: <Login />,
+    },
+    {
+      path: "*",
+      element: <PageNotFound />,
     },
   ]);
   return (
