@@ -13,7 +13,7 @@ const Dashboard = () => {
   const [collapsed, setCollapsed] = useState(false);
   const navigate = useNavigate();
   if (!token) {
-    return Navigate("/login");
+    return <Navigate to="/login" />;
   }
   const logoutFunc = () => {
     localStorage.removeItem("ACCESS_TOKEN");
