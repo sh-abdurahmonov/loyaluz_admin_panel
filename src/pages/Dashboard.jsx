@@ -1,4 +1,4 @@
-import { Outlet, Navigate, NavLink } from "react-router-dom";
+import { Outlet, Navigate, NavLink, useNavigate } from "react-router-dom";
 import Logo from "../assets/site-logo.svg";
 import { BiSolidCategory } from "react-icons/bi";
 import { FaFileCircleQuestion, FaRegNewspaper } from "react-icons/fa6";
@@ -11,16 +11,18 @@ import { useState } from "react";
 const Dashboard = () => {
   let token = localStorage.getItem("ACCESS_TOKEN");
   const [collapsed, setCollapsed] = useState(false);
+  const navigate = useNavigate();
   if (!token) {
-    return <Navigate to="/login" />;
+    return navigate("/login");
   }
   const logoutFunc = () => {
     localStorage.removeItem("ACCESS_TOKEN");
+    navigate("/login");
   };
   return (
     <section className="flex h-screen w-screen bg-slate-100">
       {!collapsed && (
-        <aside className="bg-white shadow-sm   inset-0 z-50 my-4 ml-4 h-[calc(100vh-32px)] w-72 rounded-xl transition-transform duration-300 xl:translate-x-0 border border-blue-gray-100 flex flex-col justify-center items-center">
+        <aside className="bg-white shadow-sm inset-0 z-50 my-4 ml-4 h-[calc(100vh-32px)] w-72 rounded-xl transition-transform duration-300 xl:translate-x-0 border border-blue-gray-100 flex flex-col justify-center items-center">
           <div className="fixed top-0 pt-2 w-full text-center px-4">
             <NavLink to="/">
               <img
@@ -89,7 +91,7 @@ const Dashboard = () => {
         </aside>
       )}
       <div className="flex w-full flex-col">
-        <header className="bg-white shadow-sm translate-x-0  inset-0 z-50 my-4 mx-4 h-16 rounded-xl transition-transform duration-300 xl:translate-x-0 border border-blue-gray-100 flex justify-between items-center px-4">
+        <header className="bg-white shadow-sm translate-x-0 inset-0 z-50 my-4 mx-4 h-16 rounded-xl transition-transform duration-300 xl:translate-x-0 border border-blue-gray-100 flex justify-between items-center p-4">
           <button onClick={() => setCollapsed(!collapsed)}>
             {collapsed ? (
               <RiMenuFold3Fill className="text-xl" />

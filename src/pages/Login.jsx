@@ -22,7 +22,7 @@ const Login = () => {
       .then((res) => {
         if (res.data.success === true) {
           console.log(res.data);
-          navigate("/");
+          navigate("/categories");
           localStorage.setItem(
             "ACCESS_TOKEN",
             res?.data?.data?.tokens?.accessToken?.token
