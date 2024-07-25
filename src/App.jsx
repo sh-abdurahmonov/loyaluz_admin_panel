@@ -48,10 +48,10 @@ const App = () => {
       path: "/login",
       element: <Login />,
     },
-    {
-      path: "*",
-      element: <PageNotFound />,
-    },
+    // {
+    //   path: "*",
+    //   element: <PageNotFound />,
+    // },
   ]);
   return (
     <>

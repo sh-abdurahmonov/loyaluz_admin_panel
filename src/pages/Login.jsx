@@ -12,8 +12,8 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const payload = {
-      phone_number: usernameRef.current.value,
-      password: passwordRef.current.value,
+      phone_number: usernameRef.current.value.trim(),
+      password: passwordRef.current.value.trim(),
     };
     console.log(payload);
     // POST
